@@ -1,0 +1,164 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 15% 98%;
+    --foreground: 260 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 50% 10%;
+
+    --primary: 260 50% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 187 65% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 10% 90%;
+    --muted-foreground: 260 5% 45%;
+
+    --accent: 25 95% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 30% 90%;
+    --input: 260 30% 90%;
+    --ring: 260 50% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 260 15% 8%;
+    --foreground: 260 5% 95%;
+
+    --card: 260 15% 12%;
+    --card-foreground: 260 5% 95%;
+
+    --popover: 260 15% 12%;
+    --popover-foreground: 260 5% 95%;
+
+    --primary: 260 50% 65%;
+    --primary-foreground: 260 5% 10%;
+
+    --secondary: 187 65% 45%;
+    --secondary-foreground: 260 5% 10%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 260 10% 70%;
+
+    --accent: 25 95% 60%;
+    --accent-foreground: 260 5% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 260 5% 95%;
+
+    --border: 260 15% 25%;
+    --input: 260 15% 25%;
+    --ring: 260 50% 65%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground scroll-smooth;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-bold;
+  }
+  
+  /* Add scroll-driven animations for sections */
+  section {
+    @apply opacity-0 translate-y-10 transition-all duration-700;
+  }
+  
+  section.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Add custom styles for gradient effects */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent bg-300% animate-text-shimmer;
+  }
+  
+  .bg-beam {
+    @apply absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#8b5cf6_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#1f1935_40%,#492488_100%)]
+  }
+  
+  /* Custom utilities for evervault card effect */
+  .ev-card-glow {
+    @apply before:absolute before:h-full before:w-full before:rounded-3xl before:shadow-2xl before:shadow-primary/20 dark:before:shadow-primary/30;
+  }
+  
+  .ev-card-border {
+    @apply after:absolute after:inset-0 after:rounded-3xl after:p-px after:bg-gradient-to-br from-primary/50 via-secondary/50 to-accent/50 dark:from-primary/30 dark:via-secondary/30 dark:to-accent/30;
+  }
+  
+  /* Custom dot pattern */
+  .dot-pattern {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+@font-face {
+  font-family: "Inter var";
+  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  src: url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap");
+  font-weight: 100 800;
+  font-display: swap;
+}
