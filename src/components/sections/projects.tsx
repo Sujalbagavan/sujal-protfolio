@@ -39,7 +39,7 @@ const projects: ProjectProps[] = [
     title: "Coinbost",
     description: "Mobile game play and earn by reading news and completing tasks",
     tags: ["Flutter", "Firebase", "UX/UI"],
-    image: "./images/coinbost.png",
+    image: "/images/coinbost.png",
     type: "app",
     link: "https://drive.google.com/file/d/1hMmI6BrJYFclbMNkZvewPCfD5TOps5Mv/view"
   },
@@ -57,7 +57,7 @@ const projects: ProjectProps[] = [
     title: "Voting System",
     description: "Built a full stack web app for voting and election management in 24-hours hackathon",
     tags: ["React.js", "Node.js", "MongoDB"],
-    image: "./images/election.png",
+    image: "/images/election.png",
     type: "web",
     link: "https://voting-system-app.vercel.app/"
   },
@@ -75,7 +75,7 @@ const projects: ProjectProps[] = [
     title: "Rivoo",
     description: "Mobile app that helps in making decisions with smart AI chatbot",
     tags: ["Flutter", "LocalStorage", "Payment Gateway", "UX/UI"],
-    image: "./images/rivoo2.png",
+    image: "/images/rivoo2.png",
     type: "app",
     link: "https://www.rivooapp.com/"
   },

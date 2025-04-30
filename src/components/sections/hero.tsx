@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { useEffect, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
@@ -17,6 +16,13 @@ export function Hero() {
   
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return (
     <CoverBeam>
@@ -65,8 +71,15 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <GradientButton>View My Work</GradientButton>
-              <Button variant="outline">Get In Touch</Button>
+              <GradientButton onClick={() => scrollToSection('projects')}>
+                View My Work
+              </GradientButton>
+              <Button 
+                variant="outline" 
+                onClick={() => scrollToSection('contact')}
+              >
+                Get In Touch
+              </Button>
             </motion.div>
           </div>
         </div>
