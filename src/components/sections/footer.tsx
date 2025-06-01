@@ -55,7 +55,7 @@ export function Footer() {
             </div>
             
             <div className="text-sm text-foreground/60">
-              Designed & Developed with ❤️
+              Designed & Developed with sujal
             </div>
           </div>
         </div>

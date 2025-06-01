@@ -32,7 +32,7 @@ const experienceData: ExperienceItemProps[] = [
     company: "Rivoo Freelaced",
     role: "App devloper ",
     duration: "Jan 2025 - Feb 2025",
-    description: "Build a ai dession making app that helps to make teh complex decision making easy and fast. The app is designed to be user-friendly and intuitive, allowing users to input their preferences and receive personalized recommendations.",
+    description: "An intelligent and user-friendly application designed to simplify complex decision-making processes. Built with an intuitive interface, the app allows users to input their goals, preferences, and priorities. Using advanced AI algorithms, it analyzes the data and provides clear, personalized recommendations—helping users make faster, smarter, and more confident decisions in both personal and professional life.",
   }
 ];
 
